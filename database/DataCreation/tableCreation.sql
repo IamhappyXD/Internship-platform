@@ -30,8 +30,8 @@ password VARCHAR(50) NOT NULL,
 role INT DEFAULT 2,
 first_name VARCHAR(50) NOT NULL ,
 last_name VARCHAR(50) NOT NULL ,
-univiersity_name VARCHAR(50) NOT NULL ,
-major VARCHAR(50) NOT NULL ,
+university_name VARCHAR(100) NOT NULL ,
+major VARCHAR(100) NOT NULL ,
 gender VARCHAR(50) NOT NULL ,
 cGpa NUMERIC (3, 2) NOT NULL 
 );
