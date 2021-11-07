@@ -1,0 +1,1 @@
+web: gunicorn internbee.wsgi --log-file -
