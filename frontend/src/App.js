@@ -138,7 +138,7 @@ return (
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
             <Link to={"/company"} className="nav-link">
-              Tutorials
+              Company
             </Link>
           </li>
           {/* <li className="nav-item">
@@ -150,7 +150,7 @@ return (
       </nav>
 
     <Routes>
-          <Route exact path="/companies" element={<CompanyList />} />
+          <Route exact path="/company" element={<CompanyList />} />
           {/* <Route exact path={"/add/"} element={<AddCompany />} />
           <Route path={"/company/:id/update/"} element={<UpdateCompany />} /> */}
     </Routes>

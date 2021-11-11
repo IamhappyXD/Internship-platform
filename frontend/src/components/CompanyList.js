@@ -3,6 +3,7 @@ import axios from "axios";
     // import { baseURL, headers } from "./../http-common";
     import { useNavigate } from "react-router-dom";
     import CompanyDataService from "../services/company.services";
+    import { Link } from "react-router-dom";
 
 export default class CompanyList extends Component { 
 
@@ -49,7 +50,7 @@ export default class CompanyList extends Component {
   
   
   render() {
-    const { companies } = this.state; 
+    const { companies , currentCompany, currentIndex } = this.state; 
     return (
       <div className="list row">
         <div className="col-md-6">
@@ -57,16 +58,16 @@ export default class CompanyList extends Component {
 
           <ul className="list-group">
             {companies &&
-              companies.map((company, index) => (
+              companies.map((companies, index) => (
                 <li
                   className={
                     "list-group-item " +
                     (index === currentIndex ? "active" : "")
                   }
-                  onClick={() => this.setActiveCompany(company, index)}
+                  onClick={() => this.setActiveCompany(companies, index)}
                   key={index}
                 >
-                  {company.username}
+                  {companies.username}
                 </li>
               ))}
           </ul>
@@ -83,7 +84,7 @@ export default class CompanyList extends Component {
                 {currentCompany.username}
               </div>
               <div>
-                <label>s
+                <label>
                   <strong>Description:</strong>
                 </label>{" "}
                 {currentCompany.description}
@@ -91,7 +92,7 @@ export default class CompanyList extends Component {
 
 
               {/* <Link
-                to={"/tutorials/" + currentTutorial.id}
+                to={"/company/" + currentCompany.id}
                 className="badge badge-warning"
               >
                 Edit

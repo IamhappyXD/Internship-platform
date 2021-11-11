@@ -1,8 +1,8 @@
-import {baseURL, headers} from "../http-common";
+import http from "../http-common";
 
 class CompanyDataService {
-  getAll() {
-    return baseURL.get("/company");
+   getAll() {
+    return http.get("/company");
   }
 
 }
