@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-class SignupForm extends React.Component {
+class SignupForm extends Component {
   state = {
-    username: '',
-    password: ''
+    username: "",
+    password: "",
   };
 
-  handle_change = e => {
+  handle_change = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    this.setState(prevstate => {
+    this.setState((prevstate) => {
       const newState = { ...prevstate };
       newState[name] = value;
       return newState;
@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={e => this.props.handle_signup(e, this.state)}>
+      <form onSubmit={(e) => this.props.handle_signup(e, this.state)}>
         <h4>Sign Up</h4>
         <label htmlFor="username">Username</label>
         <input
@@ -44,5 +44,5 @@ class SignupForm extends React.Component {
 export default SignupForm;
 
 SignupForm.propTypes = {
-  handle_signup: PropTypes.func.isRequired
+  handle_signup: PropTypes.func.isRequired,
 };
