@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'backend.apps.BackendConfig',
-    'company.apps.CompanyConfig'
+    'company.apps.CompanyConfig',
+    'intern.apps.InternConfig'
     #'whitenoise.runserver_nostatic',
     
 ]
@@ -52,7 +53,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-     'corsheaders.middleware.CorsMiddleware', # Note that this needs to be placed above CommonMiddleware
+    'corsheaders.middleware.CorsMiddleware', # Note that this needs to be placed above CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -106,7 +107,7 @@ DATABASES = {
         'NAME': 'internship',
         'USER': 'postgres',
         'PASSWORD': '3755578Aa',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
