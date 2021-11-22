@@ -35,7 +35,7 @@ function InternshipItem(props) {
         </div>
         <div className={classes.actions}>
           <button onClick={toggleFavoriteStatusHandler}>
-            {itemIsFavorite ? "Remove from Favorites" : "To Favorites"}
+            {itemIsFavorite ? "Remove from Favorites" : "Add to Favorites"}
           </button>
         </div>
       </Card>

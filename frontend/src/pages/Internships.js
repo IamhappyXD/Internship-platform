@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import InternshipList from "../components/Internships/InternshipList";
+import SearchBar from "../components/SearchBar";
 
 function Internships() {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,6 +41,7 @@ function Internships() {
 
   return (
     <section>
+      <SearchBar />
       <h1>All Internships</h1>
       <InternshipList internships={loadedInternships} />
     </section>

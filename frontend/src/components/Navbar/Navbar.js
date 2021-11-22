@@ -4,12 +4,17 @@ import "./Navbar.css";
 import { Button } from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ handleLoginClick }) {
   //   state = { clicked: false };
   //   handleClick = () => {
   //     this.setState({ clicked: !this.state.clicked });
   //     console.log(this.state);
   //   };
+
+  const handleClick = () => {
+    handleLoginClick();
+  };
+
   const history = useNavigate();
 
   return (
@@ -49,7 +54,7 @@ function Navbar() {
           </Link>
         </li>
       </ul>
-      <Button onClick={() => history("/sign-up")}>Sign Up</Button>
+      <Button onClick={handleClick}>Sign Up</Button>
     </nav>
   );
 }

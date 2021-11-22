@@ -13,9 +13,9 @@
   height: 60 px;
   line-height: 1.42857;
   margin: 25px;
-  width: 450px;
+  width: 550px;
   height: 20px;
-  outline: dashed 1px black;
+  outline: 1px black;
   display: flex;
   justify-content: center;
   align-items: center;

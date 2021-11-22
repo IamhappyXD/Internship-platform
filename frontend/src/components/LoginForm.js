@@ -1,48 +1,41 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+import "./LoginForm.css";
+import ToggleButton from "./ToggleButton";
 
-class LoginForm extends Component {
-  state = {
-    username: "",
-    password: "",
-  };
-
-  handle_change = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState((prevstate) => {
-      const newState = { ...prevstate };
-      newState[name] = value;
-      return newState;
-    });
-  };
-
-  render() {
-    return (
-      <form onSubmit={(e) => this.props.handle_login(e, this.state)}>
-        <h4>Log In</h4>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={this.state.username}
-          onChange={this.handle_change}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handle_change}
-        />
-        <input type="submit" />
-      </form>
-    );
-  }
-}
+const LoginForm = ({ isShowLogin }) => {
+  return (
+    <div className={`${isShowLogin ? "active" : ""} show`}>
+      <div className="login-form">
+        <div className="form-box solid">
+          <form>
+            <h1 className="login-text">Create an Account</h1>
+            <ToggleButton
+              title="Register as a:"
+              leftLabel="Student"
+              rightLabel="Company"
+            />
+            <br></br>
+            <label>E-mail</label>
+            <br></br>
+            <input type="text" name="username" className="login-box" />
+            <br></br>
+            <label>First Name & Last Name</label>
+            <br></br>
+            <input type="text" name="username" className="login-box" />
+            <label>Username</label>
+            <br></br>
+            <input type="text" name="username" className="login-box" />
+            <br></br>
+            <label>Password</label>
+            <br></br>
+            <input type="password" name="password" className="login-box" />
+            <br></br>
+            <input type="submit" value="Sign Up" className="login-btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default LoginForm;
-
-LoginForm.propTypes = {
-  handle_login: PropTypes.func.isRequired,
-};

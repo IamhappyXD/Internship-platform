@@ -33,7 +33,7 @@ function NewInternshipForm(props) {
           <input type="text" required id="title" ref={titleInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor="image">Internship Image</label>
+          <label htmlFor="image">Internship Company Logo</label>
           <input type="url" required id="image" ref={imageInputRef} />
         </div>
         <div className={classes.control}>
